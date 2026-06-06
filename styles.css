@@ -187,7 +187,11 @@ LANDING
 }
 
 header {
+<<<<<<< HEAD
   min-height: calc(100vh - 80px);
+=======
+  height: calc(100vh - 80px);
+>>>>>>> c82d2d90c1cf93fec4717674b8dbfe8efc67e2f4
 }
 
 .header__container {
