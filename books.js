@@ -1,13 +1,15 @@
 function renderBooks() {
   const booksWrapper = document.querySelector('.books');
 
-  booksWrapper.innerHTML =
-  `<div class="book">
+  const books = getBooks();
+
+  const booksHtml = books.map((book) => {
+   return `<div class="book">
  <figure class="book__img--wrapper">
-  <img class="book__img" src="assets/crack the coding interview.png" alt="">
+  <img class="book__img" src="${books.url}" alt="">
  </figure>
   <div class="book__title">
-  Crack the Coding Interview
+  ${books.title}
    </div>
   <div class="book__ratings">
   <i class="fas fa-star"></i>
@@ -17,14 +19,21 @@ function renderBooks() {
   <i class="fas fa-star-half-alt"></i>
  </div>
 <div class="book__price">
-<span class="book__price--normal">$59.95</span> $14.95
+<span class="book__price--normal">$${book.originalPrice} </span> $${book.salePrice}
 </div>
-</div>`
+</div>`;
+  });
+
+  booksWrapper.innerHTML = booksHtml; 
+  console.log(booksHtml)
+  // booksWrapper.innerHTML =
 }
 setTimeout (() => {
 renderBooks();
 });
+
 // FAKE DATA
+
 function getBooks() {
   return [
     {
@@ -40,7 +49,7 @@ function getBooks() {
       title: "Atomic Habits",
       url: "assets/atomic habits.jpg",
       originalPrice: 39,
-      salePrice: null,
+      salePrice: 15,
       rating: 5,
     },
     {
