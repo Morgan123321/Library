@@ -1,5 +1,5 @@
 function renderBooks() {
-  const booksWrapper = document.querySelector('.books');
+  const booksWrapper = document.querySelector(".books");
 
   const books = getBooks();
 
