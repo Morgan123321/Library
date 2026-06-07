@@ -53,7 +53,9 @@ ${priceHTML(book.originalPrice, book.salePrice)}
 
   }).join("");
 
-  booksWrapper.innerHTML = booksHtml; 
+const existingBooks = booksWrapper.querySelectorAll('.book');
+existingBooks.forEach(book => book.remove());
+booksWrapper.insertAdjacentHTML('beforeend', booksHTML);
 
 function priceHTML(originalPrice, salePrice) {
 if (!salePrice) {
