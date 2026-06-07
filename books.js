@@ -21,7 +21,7 @@ async function renderBooks(filter) {
   console.log(ratingHTML)
 
 
-  const booksHtml = books.map((book) => {
+  const booksHTML = books.map((book) => {
 
 
    return `<div class="book">
@@ -88,8 +88,8 @@ function filterBooks(event) {
 
 
 setTimeout (() => {
-
 renderBooks();
+
 
 });
 
