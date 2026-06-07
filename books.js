@@ -6,6 +6,7 @@ function renderBooks() {
 
   const booksHtml = books.map((book) => {
 
+
    return `<div class="book">
 
  <figure class="book__img--wrapper">
@@ -36,7 +37,7 @@ function renderBooks() {
 
 <div class="book__price">
 
-<span class="book__price--normal">$${book.originalPrice} </span> $${book.salePrice}
+<span class="book__price--normal">$${book.originalPrice.toFixed} </span> 
 
 </div>
 
@@ -44,12 +45,17 @@ function renderBooks() {
 
   });
 
+  .join("");
+
   booksWrapper.innerHTML = booksHtml; 
 
   console.log(booksHtml)
 
   // booksWrapper.innerHTML =
 
+}
+function filterBooks(event) {
+    console.log('filterBooks')
 }
 
 setTimeout (() => {
@@ -244,4 +250,3 @@ function getBooks() {
 
 }
 
-Als
