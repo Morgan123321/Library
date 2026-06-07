@@ -96,8 +96,8 @@ renderBooks();
 function getBooks() {
  return new Promise((resolve) => {
     setTimeout(() => {
-resolve([])
-    }}}
+resolve([
+    {
  
       id: 1,
 
@@ -271,9 +271,8 @@ resolve([])
 
       rating: 4.5,
 
-    },1000
-
-
-;
-
-
+    },
+]);
+    }, 1000);
+});
+}
