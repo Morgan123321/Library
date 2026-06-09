@@ -1,8 +1,14 @@
-async function renderBooks(filter) {
+let books;
 
- const books = await getBooks();
-  console.log(books)
-  const booksWrapper = document.querySelector(".books");
+async function renderBooks(filter) {
+ const booksWrapper = document.querySelector(".books");
+
+ booksWrapper.classList +=' books__loading'   
+ if (!books){
+    books = await getBooks();
+ }
+   booksWrapper.classList.remove('books__loading')  
+ 
 
 
   if (filter === 'LOW_TO_HIGH') {
